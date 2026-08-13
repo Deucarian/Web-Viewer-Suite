@@ -1,0 +1,22 @@
+{
+  "name": "Deucarian.WebViewerSuite.Samples.Stack",
+  "rootNamespace": "Deucarian.WebViewerSuite.Samples.Stack",
+  "references": [
+    "Deucarian.API",
+    "Deucarian.CommandRouting",
+    "Deucarian.CommandRouting.WebGLIntegration",
+    "Deucarian.ObjectLoading",
+    "Deucarian.ObjectLoading.APIIntegration",
+    "Deucarian.ViewerNavigation",
+    "Newtonsoft.Json"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

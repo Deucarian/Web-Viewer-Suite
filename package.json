@@ -1,0 +1,44 @@
+{
+  "name": "com.deucarian.web-viewer-suite",
+  "version": "0.1.0",
+  "displayName": "Deucarian Web Viewer Suite",
+  "description": "Implementation-free bundle of the reusable Deucarian WebGL viewer stack and a reference composition sample.",
+  "unity": "6000.0",
+  "license": "MIT",
+  "author": {
+    "name": "Deucarian"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deucarian/Web-Viewer-Suite.git"
+  },
+  "keywords": [
+    "deucarian",
+    "viewer",
+    "webgl",
+    "suite",
+    "navigation"
+  ],
+  "dependencies": {
+    "com.deucarian.api": "1.1.4",
+    "com.deucarian.build-pipeline": "0.4.0",
+    "com.deucarian.camera-navigation": "0.2.10",
+    "com.deucarian.camera-navigation.input-system-integration": "0.1.5",
+    "com.deucarian.command-routing": "0.1.0",
+    "com.deucarian.command-routing.webgl-integration": "0.1.0",
+    "com.deucarian.diagnostics": "0.1.4",
+    "com.deucarian.object-loading": "1.2.2",
+    "com.deucarian.object-loading.api-integration": "0.2.5",
+    "com.deucarian.pointer-capture": "0.1.2",
+    "com.deucarian.theming": "1.0.3",
+    "com.deucarian.ui": "0.2.1",
+    "com.deucarian.viewer-navigation": "0.1.0"
+  },
+  "samples": [
+    {
+      "displayName": "Web Viewer Stack",
+      "description": "Reference composition of model loading, command transport, diagnostics, and viewer navigation.",
+      "path": "Samples~/Web Viewer Stack"
+    }
+  ]
+}
