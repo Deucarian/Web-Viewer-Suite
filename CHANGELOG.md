@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.1.2] - 2026-08-14
+
+- Updated the implementation-free suite to the canonical Viewer Navigation reference
+  preset used by Report Viewer, Activity Viewer, and the Web Viewer Template.
+
 ## [0.1.1] - 2026-08-14
 
 - Aligned the Suite with the two-consumer-proven navigation and command-routing package versions.
