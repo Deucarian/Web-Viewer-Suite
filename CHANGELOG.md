@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.1.3] - 2026-08-17
+
+- Updated the implementation-free suite to Viewer Navigation 0.1.3, where the
+  optional six-face view cube is disabled unless a consumer explicitly enables it.
+
 ## [0.1.2] - 2026-08-14
 
 - Updated the implementation-free suite to the canonical Viewer Navigation reference
