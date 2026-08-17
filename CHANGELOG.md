@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.4] - 2026-08-17
+
+- Updated the suite to Viewer Navigation 0.1.4, restoring the polished
+  Report Viewer icon toolbar, interactions, theming, and runtime tooltips for
+  every composed viewer while keeping the optional view cube disabled.
+
 ## [0.1.3] - 2026-08-17
 
 - Updated the implementation-free suite to Viewer Navigation 0.1.3, where the
