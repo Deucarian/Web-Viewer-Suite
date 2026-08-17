@@ -10,10 +10,11 @@ identical to the `suiteMembers` list in Package Registry. They provide:
 - API-backed AssetBundle loading through API, Object Loading, and their integration;
 - canonical command dispatch and the secure WebGL browser transport;
 - Camera Navigation, Input System integration, Pointer Capture, UI, Theming,
-  and Viewer Navigation with the shared-reference Orbit/Fly/Recenter/Top-view
-  icon toolbar, dark Frosted Glass theme, coordinated pointer/input behavior,
-  shared browser reduced-motion behavior, and optional six-face view cube (off
-  by default);
+  and Viewer Navigation with the canonical package-owned
+  Orbit/Fly/Recenter/Top-view reference toolbar, Theming-owned dark Frosted
+  Glass styling and typography, coordinated pointer/input behavior, shared
+  browser reduced-motion behavior, and optional six-face view cube (off by
+  default);
 - sanitized operational diagnostics; and
 - project-owned WebGL Build Profiles through Build Pipeline.
 

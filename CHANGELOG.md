@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.7] - 2026-08-17
+
+- Updated to Viewer Navigation 0.1.7 so the suite composes the canonical
+  package-owned reference toolbar assets, presentation, and input behavior.
+- Updated to Theming 1.0.5 so the reference toolbar resolves its runtime UI
+  Toolkit styling and typography through the reusable Theming adapter.
+
 ## [0.1.6] - 2026-08-17
 
 - Updated to Viewer Navigation 0.1.6 so the shared reference composition also
