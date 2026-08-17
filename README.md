@@ -12,7 +12,8 @@ identical to the `suiteMembers` list in Package Registry. They provide:
 - Camera Navigation, Input System integration, Pointer Capture, UI, Theming,
   and Viewer Navigation with the shared-reference Orbit/Fly/Recenter/Top-view
   icon toolbar, dark Frosted Glass theme, coordinated pointer/input behavior,
-  and optional six-face view cube (off by default);
+  shared browser reduced-motion behavior, and optional six-face view cube (off
+  by default);
 - sanitized operational diagnostics; and
 - project-owned WebGL Build Profiles through Build Pipeline.
 
