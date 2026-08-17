@@ -2,7 +2,12 @@
 
 Attach `WebViewerStackSample` to a scene object, assign a camera, and optionally
 assign an already placed reference model. The sample composes public APIs from
-the Suite members; it does not introduce an additional viewer runtime.
+the Suite members; it does not introduce an additional viewer runtime. Viewer
+Navigation is created through its shared reference composition, so the sample
+uses the canonical input blocker, mesh-bounds strategy, and animation policy
+as well as the canonical dark Frosted Glass theme/provider even when a scene
+supplies custom navigation settings. The custom settings path uses `WithPreset`
+so none of those shared policy or theme identities are forked.
 
 The browser host may send `describe_viewer_stack` or `load_reference` using the
 canonical Command Routing envelope. `load_reference` accepts a `model_url` and
