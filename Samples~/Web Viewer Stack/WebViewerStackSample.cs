@@ -42,10 +42,13 @@ namespace Deucarian.WebViewerSuite.Samples.Stack
 
             IApiClient apiClient = ApiClientFactory.Create(apiClientConfig);
             loadingPipeline = ApiObjectLoadingPipelineFactory.Create(apiClient);
-            navigation = ViewerNavigationInstaller.Create(
-                transform,
-                viewerCamera,
-                navigationSettings);
+            ViewerNavigationReferenceCompositionProfile referenceComposition =
+                ViewerNavigationReferenceComposition.Resolve();
+            ViewerNavigationReferenceCompositionProfile effectiveComposition =
+                navigationSettings == null
+                    ? referenceComposition
+                    : referenceComposition.WithPreset(navigationSettings);
+            navigation = effectiveComposition.Compose(transform, viewerCamera);
 
             navigation.BeginReferenceLoad();
             if (referenceModel != null)
