@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.6] - 2026-08-17
+
+- Updated to Viewer Navigation 0.1.6 so the shared reference composition also
+  owns the defensive WebGL `prefers-reduced-motion` gate. Every suite consumer
+  now receives the same runtime navigation accessibility behavior by default.
+
 ## [0.1.5] - 2026-08-17
 
 - Updated the suite to Viewer Navigation 0.1.5 so composed viewers can use the
