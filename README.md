@@ -16,6 +16,11 @@ identical to the `suiteMembers` list in Package Registry. They provide:
   viewport-aware topmost tooltips, coordinated pointer/input behavior,
   shared browser reduced-motion behavior, and optional six-face view cube
   (off by default);
+- Viewer Rendering with the canonical camera, light, URP, post-processing,
+  reflection, environment, and display-settings baseline;
+- Viewer Shell with the shared status presentation, diagnostics,
+  display-settings menu, responsive chrome, top-right menu coordination, and
+  single authoritative reference theme composition;
 - sanitized operational diagnostics; and
 - project-owned WebGL Build Profiles through Build Pipeline.
 
@@ -33,9 +38,12 @@ Development:
 "com.deucarian.web-viewer-suite": "https://github.com/Deucarian/Web-Viewer-Suite.git#develop"
 ```
 
-Import the **Web Viewer Stack** sample to inspect a small explicit composition
-root. Application commands, DTOs, model-version resolution, selection policy,
-and persistence remain application responsibilities.
+Import the **Web Viewer Stack** sample to inspect a small explicit low-level
+composition root. The installed Viewer Rendering and Viewer Shell packages own
+the reusable visual baseline and viewer chrome; the runnable Web Viewer
+Template composes them together. Application commands, DTOs, model-version
+resolution, selection policy, and persistence remain application
+responsibilities.
 
 For a runnable generic starting point, install
 `com.deucarian.template.viewer.web` rather than adding implementation here.
@@ -44,7 +52,7 @@ For a runnable generic starting point, install
 
 The suite owns dependency composition and its reference sample only. It does
 not own camera math, raw input, pointer-lock lifecycle, command routing, model
-loading, a generic viewer core, or any Report/Activity business behavior.
+loading, a competing viewer core, or any Report/Activity business behavior.
 
 ## Validation
 

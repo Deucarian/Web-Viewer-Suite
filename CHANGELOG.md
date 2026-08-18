@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.9] - 2026-08-18
+
+- Added Viewer Rendering 0.1.0 and Viewer Shell 0.1.0 so suite consumers
+  receive the shared reference environment, display-settings contract, status
+  presentation, diagnostics, responsive chrome, and coordinated top-right
+  menus without product-local copies.
+- Updated to UI 0.2.7 for the package-owned viewer menu cluster and to Viewer
+  Navigation 0.1.10 for composition with the shell's single authoritative
+  reference theme provider.
+
 ## [0.1.8] - 2026-08-18
 
 - Updated to UI 0.2.6 so suite consumers share the canonical runtime panel,
