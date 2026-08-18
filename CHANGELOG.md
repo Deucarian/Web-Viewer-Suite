@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.11] - 2026-08-18
+
+- Updated API, Session API Integration, and Viewer Authentication for
+  credential-safe configurable token endpoint acquisition.
+- The compiled sample now registers the same conventional package-owned
+  endpoint provider used by template and product viewers when a profile is
+  present.
+
 ## [0.1.10] - 2026-08-18
 
 - Added Session, Session API Integration, and Viewer Authentication to the
