@@ -15,4 +15,6 @@ uses API-backed Object Loading before registering bounds and origin with Viewer
 Navigation.
 
 For a complete generic host, selection example, browser harness, and Build
-Profiles, use the Deucarian Web Viewer Template package.
+Profiles, use the Deucarian Web Viewer Template package. It composes the Viewer
+Rendering and Viewer Shell packages installed by this suite, so generic visual
+settings and chrome are shared rather than copied into each application.
