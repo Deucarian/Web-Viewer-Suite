@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.13] - 2026-08-19
+
+- Updated Viewer Authentication to 0.3.1 so developers can clearly see the
+  active backend origin and exact sign-in and token-check endpoints, including
+  warnings when those endpoint profiles target different origins.
+
 ## [0.1.12] - 2026-08-18
 
 - Updated Session API Integration to 1.1.1 and Viewer Authentication to 0.3.0
