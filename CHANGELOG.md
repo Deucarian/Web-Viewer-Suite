@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.1.10] - 2026-08-18
+
+- Added Session, Session API Integration, and Viewer Authentication to the
+  canonical Web Viewer stack.
+
 ## [0.1.9] - 2026-08-18
 
 - Added Viewer Rendering 0.1.0 and Viewer Shell 0.1.0 so suite consumers
