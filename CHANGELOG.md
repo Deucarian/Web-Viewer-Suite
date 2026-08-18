@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.8] - 2026-08-18
+
+- Updated to UI 0.2.6 so suite consumers share the canonical runtime panel,
+  semantic UI depth contract, and viewport-aware topmost tooltip layer.
+- Updated to Viewer Navigation 0.1.9 so navigation chrome uses those shared
+  panel, depth, tooltip, pointer, and input behaviors without private UI
+  layering rules.
+
 ## [0.1.7] - 2026-08-17
 
 - Updated to Viewer Navigation 0.1.7 so the suite composes the canonical
