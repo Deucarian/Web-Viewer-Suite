@@ -23,7 +23,8 @@ identical to the `suiteMembers` list in Package Registry. They provide:
   single authoritative reference theme composition;
 - Session, Session API Integration, and Viewer Authentication with a live
   replaceable/refreshable API token source, shared viewer auth commands, and
-  the package-owned development authentication window;
+  the package-owned development authentication window plus credential-free
+  endpoint profiles and transient **Refresh Token** acquisition;
 - sanitized operational diagnostics; and
 - project-owned WebGL Build Profiles through Build Pipeline.
 

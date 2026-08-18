@@ -50,14 +50,20 @@ namespace Deucarian.WebViewerSuite.Samples.Stack
             }
 
             authenticationSession = new ViewerAuthenticationSession();
+            IApiClient apiClient = ApiClientFactory.Create(
+                apiClientConfig,
+                authenticationSession.ApiAuthProvider);
+            ViewerAuthenticationEndpointProviderFactory
+                .TryCreateFromResources(
+                    out ViewerAuthenticationEndpointProvider
+                        authenticationEndpointProvider,
+                    apiClient);
             authenticationTargetRegistration =
                 ViewerAuthenticationTargetRegistry.Register(
                     "web-viewer-suite-sample-" + GetInstanceID(),
                     "Web Viewer Suite Sample",
-                    authenticationSession);
-            IApiClient apiClient = ApiClientFactory.Create(
-                apiClientConfig,
-                authenticationSession.ApiAuthProvider);
+                    authenticationSession,
+                    authenticationEndpointProvider);
             loadingPipeline = ApiObjectLoadingPipelineFactory.Create(
                 apiClient,
                 ApiAuthenticationRequirement.Disabled);
