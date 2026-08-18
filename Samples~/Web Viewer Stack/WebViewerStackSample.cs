@@ -4,17 +4,21 @@ using System.Threading;
 using System.Threading.Tasks;
 using Deucarian.API.Configuration;
 using Deucarian.API.Core;
+using Deucarian.API.Models;
 using Deucarian.CommandRouting;
 using Deucarian.CommandRouting.WebGLIntegration;
 using Deucarian.ObjectLoading;
 using Deucarian.ObjectLoading.APIIntegration;
+using Deucarian.ViewerAuthentication;
 using Deucarian.ViewerNavigation;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 namespace Deucarian.WebViewerSuite.Samples.Stack
 {
-    public sealed class WebViewerStackSample : MonoBehaviour
+    public sealed class WebViewerStackSample :
+        MonoBehaviour,
+        IViewerAuthenticationHost
     {
         [SerializeField] private Camera viewerCamera;
         [SerializeField] private GameObject referenceModel;
@@ -27,6 +31,11 @@ namespace Deucarian.WebViewerSuite.Samples.Stack
         private ViewerNavigationInstaller navigation;
         private ObjectLoadingPipeline loadingPipeline;
         private WebGlCommandRoutingHost<WebViewerStackSample> commandHost;
+        private ViewerAuthenticationSession authenticationSession;
+        private IDisposable authenticationTargetRegistration;
+
+        public IViewerAuthenticationSession AuthenticationSession =>
+            authenticationSession;
 
         private void Start()
         {
@@ -40,8 +49,18 @@ namespace Deucarian.WebViewerSuite.Samples.Stack
                 return;
             }
 
-            IApiClient apiClient = ApiClientFactory.Create(apiClientConfig);
-            loadingPipeline = ApiObjectLoadingPipelineFactory.Create(apiClient);
+            authenticationSession = new ViewerAuthenticationSession();
+            authenticationTargetRegistration =
+                ViewerAuthenticationTargetRegistry.Register(
+                    "web-viewer-suite-sample-" + GetInstanceID(),
+                    "Web Viewer Suite Sample",
+                    authenticationSession);
+            IApiClient apiClient = ApiClientFactory.Create(
+                apiClientConfig,
+                authenticationSession.ApiAuthProvider);
+            loadingPipeline = ApiObjectLoadingPipelineFactory.Create(
+                apiClient,
+                ApiAuthenticationRequirement.Disabled);
             ViewerNavigationReferenceCompositionProfile referenceComposition =
                 ViewerNavigationReferenceComposition.Resolve();
             ViewerNavigationReferenceCompositionProfile effectiveComposition =
@@ -72,7 +91,9 @@ namespace Deucarian.WebViewerSuite.Samples.Stack
                 new ICommandHandler<WebViewerStackSample>[]
                 {
                     new DescribeStackHandler(),
-                    new LoadReferenceHandler()
+                    new LoadReferenceHandler(),
+                    new ViewerAuthenticationCommandHandler<
+                        WebViewerStackSample>()
                 },
                 transportOptions,
                 gameObject);
@@ -81,6 +102,8 @@ namespace Deucarian.WebViewerSuite.Samples.Stack
 
         private void OnDestroy()
         {
+            authenticationTargetRegistration?.Dispose();
+            authenticationTargetRegistration = null;
             commandHost?.Dispose();
             commandHost = null;
             loadingPipeline?.UnloadLast();
@@ -147,7 +170,10 @@ namespace Deucarian.WebViewerSuite.Samples.Stack
                 {
                     ["transport"] = "webgl",
                     ["navigation"] = "viewer-navigation",
-                    ["model_loading"] = "object-loading-api-integration"
+                    ["model_loading"] = "object-loading-api-integration",
+                    ["authentication"] =
+                        context.Application.AuthenticationSession.Status.Status
+                            .ToString()
                 }));
             }
         }

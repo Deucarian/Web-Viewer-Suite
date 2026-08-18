@@ -21,6 +21,9 @@ identical to the `suiteMembers` list in Package Registry. They provide:
 - Viewer Shell with the shared status presentation, diagnostics,
   display-settings menu, responsive chrome, top-right menu coordination, and
   single authoritative reference theme composition;
+- Session, Session API Integration, and Viewer Authentication with a live
+  replaceable/refreshable API token source, shared viewer auth commands, and
+  the package-owned development authentication window;
 - sanitized operational diagnostics; and
 - project-owned WebGL Build Profiles through Build Pipeline.
 
