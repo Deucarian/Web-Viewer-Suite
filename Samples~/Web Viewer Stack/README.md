@@ -14,6 +14,15 @@ canonical Command Routing envelope. `load_reference` accepts a `model_url` and
 uses API-backed Object Loading before registering bounds and origin with Viewer
 Navigation.
 
+The sample also registers the shared Viewer Authentication session and
+`update_access_token`, `refresh_access_token`, and `clear_access_token`
+commands, plus the existing `updateaccesstoken` compatibility alias. In the
+Unity Editor, use **Tools > Deucarian > Viewer >
+Authentication** to inspect or replace the live token without exposing it in
+the scene or diagnostics. The low-level sample keeps arbitrary `model_url`
+downloads anonymous; the full template adds the trusted-origin policy for
+provider-authenticated model downloads.
+
 For a complete generic host, selection example, browser harness, and Build
 Profiles, use the Deucarian Web Viewer Template package. It composes the Viewer
 Rendering and Viewer Shell packages installed by this suite, so generic visual
