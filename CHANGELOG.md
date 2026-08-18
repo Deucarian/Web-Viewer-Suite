@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.12] - 2026-08-18
+
+- Updated Session API Integration to 1.1.1 and Viewer Authentication to 0.3.0
+  for the shared Edit Mode authentication workspace and optional server-side
+  token validation profile.
+
 ## [0.1.11] - 2026-08-18
 
 - Updated API, Session API Integration, and Viewer Authentication for
