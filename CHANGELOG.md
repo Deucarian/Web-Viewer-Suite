@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.14] - 2026-08-19
+
+- Updated Viewer Authentication to 0.4.0 so the canonical viewer stack uses
+  the shared minimalist connection workspace, exact viewer-bound token
+  storage, and stale-operation safeguards.
+
 ## [0.1.13] - 2026-08-19
 
 - Updated Viewer Authentication to 0.3.1 so developers can clearly see the
