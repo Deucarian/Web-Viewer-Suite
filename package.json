@@ -1,6 +1,6 @@
 {
   "name": "com.deucarian.web-viewer-suite",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "displayName": "Deucarian Web Viewer Suite",
   "description": "Implementation-free bundle of the reusable Deucarian WebGL viewer stack and a reference composition sample.",
   "unity": "6000.0",
@@ -37,7 +37,7 @@
     "com.deucarian.viewer-navigation": "0.1.10",
     "com.deucarian.viewer-rendering": "0.1.0",
     "com.deucarian.viewer-shell": "0.1.0",
-    "com.deucarian.viewer-authentication": "0.3.1",
+    "com.deucarian.viewer-authentication": "0.4.0",
     "com.unity.nuget.newtonsoft-json": "3.2.2"
   },
   "samples": [
