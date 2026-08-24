@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.15] - 2026-08-24
+
+- Added the reusable WebGL browser template to the canonical viewer stack.
+- Updated Build Pipeline to 0.5.0 for package template synchronization,
+  Build Profile selection, and drift validation.
+
 ## [0.1.14] - 2026-08-19
 
 - Updated Viewer Authentication to 0.4.0 so the canonical viewer stack uses
