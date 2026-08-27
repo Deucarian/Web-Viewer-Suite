@@ -7,7 +7,8 @@
     "Deucarian.CommandRouting.WebGLIntegration",
     "Deucarian.ObjectLoading",
     "Deucarian.ObjectLoading.APIIntegration",
-    "Deucarian.ViewerAuthentication",
+    "Deucarian.Authentication",
+    "Deucarian.Authentication.ViewerIntegration",
     "Deucarian.ViewerNavigation",
     "Newtonsoft.Json"
   ],

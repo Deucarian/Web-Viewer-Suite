@@ -9,7 +9,7 @@ using Deucarian.CommandRouting;
 using Deucarian.CommandRouting.WebGLIntegration;
 using Deucarian.ObjectLoading;
 using Deucarian.ObjectLoading.APIIntegration;
-using Deucarian.ViewerAuthentication;
+using Deucarian.Authentication;
 using Deucarian.ViewerNavigation;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
@@ -18,23 +18,25 @@ namespace Deucarian.WebViewerSuite.Samples.Stack
 {
     public sealed class WebViewerStackSample :
         MonoBehaviour,
-        IViewerAuthenticationHost
+        IAuthenticationHost
     {
         [SerializeField] private Camera viewerCamera;
         [SerializeField] private GameObject referenceModel;
         [SerializeField] private Transform modelParent;
         [SerializeField] private ViewerNavigationSettings navigationSettings;
         [SerializeField] private ApiClientConfig apiClientConfig;
+        [SerializeField] private SessionTokenEndpointProfile
+            authenticationEndpointProfile;
         [SerializeField] private bool iframeMode;
         [SerializeField] private string parentOrigin = "http://localhost:8080";
 
         private ViewerNavigationInstaller navigation;
         private ObjectLoadingPipeline loadingPipeline;
         private WebGlCommandRoutingHost<WebViewerStackSample> commandHost;
-        private ViewerAuthenticationSession authenticationSession;
+        private AuthenticationSession authenticationSession;
         private IDisposable authenticationTargetRegistration;
 
-        public IViewerAuthenticationSession AuthenticationSession =>
+        public IAuthenticationSession AuthenticationSession =>
             authenticationSession;
 
         private void Start()
@@ -49,17 +51,18 @@ namespace Deucarian.WebViewerSuite.Samples.Stack
                 return;
             }
 
-            authenticationSession = new ViewerAuthenticationSession();
+            authenticationSession = new AuthenticationSession();
             IApiClient apiClient = ApiClientFactory.Create(
                 apiClientConfig,
                 authenticationSession.ApiAuthProvider);
-            ViewerAuthenticationEndpointProviderFactory
-                .TryCreateFromResources(
-                    out ViewerAuthenticationEndpointProvider
-                        authenticationEndpointProvider,
-                    apiClient);
+            AuthenticationEndpointProvider authenticationEndpointProvider =
+                authenticationEndpointProfile != null
+                    ? AuthenticationEndpointProviderFactory.Create(
+                        authenticationEndpointProfile,
+                        apiClient)
+                    : null;
             authenticationTargetRegistration =
-                ViewerAuthenticationTargetRegistry.Register(
+                AuthenticationTargetRegistry.Register(
                     "web-viewer-suite-sample-" + GetInstanceID(),
                     "Web Viewer Suite Sample",
                     authenticationSession,
@@ -98,7 +101,7 @@ namespace Deucarian.WebViewerSuite.Samples.Stack
                 {
                     new DescribeStackHandler(),
                     new LoadReferenceHandler(),
-                    new ViewerAuthenticationCommandHandler<
+                    new AuthenticationCommandHandler<
                         WebViewerStackSample>()
                 },
                 transportOptions,
