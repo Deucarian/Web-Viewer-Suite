@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.0] - 2026-08-26
+
+- Migrated the composition-only sample to API 2.0 and generic Authentication
+  1.0, including the optional viewer integration assembly.
+- Removed conventional resource discovery; the sample accepts only an
+  explicitly assigned credential-free endpoint profile.
+- Aligned the composed camera, command, diagnostics, pointer, session API,
+  theming, and viewer-navigation packages to their migration releases.
+
 ## [0.1.15] - 2026-08-24
 
 - Added the reusable WebGL browser template to the canonical viewer stack.
